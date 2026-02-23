@@ -1,27 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CodeLingo</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeLingo</title>
+  <link rel="stylesheet" href="CSS/styles.css" />
 </head>
 <body>
-<div class="container">
-    <div class="card" id="quiz-card">
-        <h1>CodeLingo</h1>
-        <div class="lang-tabs" id="lang-tabs"></div>
-        <div class="score-board">
-            <span>Score: <strong id="score">0</strong></span>
-            <span>Question: <strong id="q-counter">1</strong> / <strong id="q-total">10</strong></span>
+  <!-- Confetti canvas -->
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <main class="container">
+    <section class="card" id="quiz-card" aria-label="CodeLingo quiz">
+      <header class="top">
+        <div>
+          <h1 class="logo">CodeLingo</h1>
+          <p class="subtitle">Duolingo-style syntax reps across languages</p>
         </div>
-        <div class="progress-bar">
-            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+
+        <div class="pill" title="Mode">
+          <span class="pill-dot"></span>
+          <span>Quiz</span>
         </div>
+      </header>
+
+      <div class="lang-tabs" id="lang-tabs" role="tablist" aria-label="Languages"></div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-label">Score</div>
+          <div class="stat-value" id="score">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">⭐ XP</div>
+          <div class="stat-value" id="xp">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">🔥 Streak</div>
+          <div class="stat-value" id="streak">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">🏆 Best</div>
+          <div class="stat-value" id="best-score">0</div>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div class="qcount">
+          <span>Question</span>
+          <strong id="q-counter">1</strong>
+          <span class="muted">/</span>
+          <strong id="q-total">10</strong>
+        </div>
+
+        <div class="timer">
+          <span class="muted">Speed</span>
+          <strong id="speed">0.0s</strong>
+          <span class="badge" id="bonus-badge" style="display:none;">+5 XP</span>
+        </div>
+      </div>
+
+      <div class="progress-bar" aria-label="Progress">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="question-wrap">
         <p class="question" id="question-text"></p>
-        <div class="options" id="options"></div>
-        <p id="feedback"></p>
-        <button class="next-btn" id="next-btn" onclick="nextQuestion()">Next Question →</button>
-    </div>
-</div>
-<script src="js/app.js"></script>
+      </div>
+
+      <div class="options" id="options" role="group" aria-label="Answer choices"></div>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+
+      <div class="actions">
+        <button class="btn secondary" id="skip-btn" type="button">Skip</button>
+        <button class="btn primary next-btn" id="next-btn" type="button">Next →</button>
+      </div>
+
+      <footer class="footer">
+        <span class="muted">Tips: press <strong>1–4</strong> to answer • <strong>Enter</strong> for next</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="JS/app.js"></script>
 </body>
 </html>
