@@ -8,7 +8,15 @@ const questions = {
       { q: "Which symbol ends a statement in C++?", options: [";", ":", ".", ","], answer: 0, explanation: "Most C++ statements end with a semicolon (;)." },
       { q: "How do you print to console in C++?", options: ["cout << \"Hello\";", "print(\"Hello\");", "console.log(\"Hello\");", "System.out.println(\"Hello\");"], answer: 0, explanation: "C++ uses cout (from <iostream>) to print." },
       { q: "What is the correct way to start the main function?", options: ["int main()", "void main", "main() int", "function main()"], answer: 0, explanation: "The standard entry point is int main()." },
-      { q: "Which header is needed for cout?", options: ["#include <iostream>", "#include <stdio>", "#include <print>", "#include <o>"], answer: 0, explanation: "cout is defined in iostream." },
+      { q: "Which header is needed for cout?", 
+        options: [
+          "#include &lt;iostream&gt;", 
+          "#include &lt;stdio&gt;", 
+          "#include &lt;print&gt;", 
+          "#include &lt;o&gt;"
+        ], 
+        answer: 0, 
+        explanation: "cout is defined in iostream."  },
       { q: "How do you declare a constant in C++?", options: ["const int x = 5;", "constant int x = 5;", "final int x = 5;", "static int x = 5;"], answer: 0, explanation: "Use const to make a value read-only." },
       { q: "What does '++' do in C++?", options: ["Increments by 1", "Adds two numbers", "Concatenates strings", "Declares a pointer"], answer: 0, explanation: "++ increases a variable by 1." },
       { q: "Which is a valid C++ comment?", options: ["// comment", "/* comment */", "# comment", "-- comment"], answer: 0, explanation: "C++ supports // and /* */ comments." },
