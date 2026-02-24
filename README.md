@@ -1,4 +1,4 @@
-What is codeLingo? 
+What is CodeLingo? 
 -
 CodeLingo is a Duolingo-style syntax trainer that was made to help students strengthen their programming foundation through fast-paced, gameified repition.
 Instead of passively reading syntax, players can actively test their knowledge accross multiple programming languages while tracking score, XP, and streaks, and speed.
